@@ -83,7 +83,8 @@ $pub: Publication;
       this.MS.affectMemberToEvent(data.member.id, ArticleId).subscribe(()=>{
         // or manually add the tool to the existing list
         // this.dataSource.push(toolNew);
-        this.router.navigate(['/dashboard']);
+        // Close the dialog
+        location.reload();
         // Close the dialog
 
       });
