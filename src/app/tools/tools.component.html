@@ -1,52 +1,57 @@
-<div class="container mt-5">
-  <div class="row mb-4">
-    <div class="col">
-      <h2 class="text-primary">Liste des Outils</h2>
-    </div>
-    <div class="col text-end">
-      <button class="btn btn-primary" routerLink="create">
-        <i class="fas fa-plus"></i> Nouveau Outil
-      </button>
+<div class="container mt-4">
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-8 text-center">
+      <button class="btn btn-primary" (click)="openToolCreate()">Créer un nouveau outil</button>
     </div>
   </div>
 
-  <div class="card shadow-sm">
-    <div class="row mb-3">
-      <div class="col">
-        <h2 class="text-center">Outils</h2>
-      </div>
-      
-    </div>
-    
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nom</th>
-              <th>Date</th>
-              <th>Source</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let tool of dataSource.data">
-              <td>{{tool.id}}</td>
-              <td>{{tool.nom}}</td>
-              <td>{{tool.date | date}}</td>
-              <td>{{tool.source}}</td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary me-2" (click)="editTool(tool.id)">
-                  <i class="fas fa-edit">Modifier</i>
-                </button>
-                <button class="btn btn-sm btn-outline-danger" (click)="deleteTool(tool.id)">
-                  <i class="fas fa-trash">Supprimer</i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h1>Outils</h1>
+          <div class="form-group mb-0">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Filter (Ex. John/1)"
+              (keyup)="applyFilter($event)"
+              #input
+            />
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Source</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tool of dataSource.data">
+                <td>{{tool.id}}</td>
+                <td>{{tool.nom}}</td>
+                <td>{{tool.date | date}}</td>
+                <td>{{tool.source}}</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-2" (click)="editTool(tool.id)">
+                    <i class="fas fa-edit">Modifier</i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger me-2" (click)="deleteTool(tool.id)">
+                    <i class="fas fa-trash">Supprimer</i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary" (click)="affecter(tool.id)">
+                    <i class="fas fa-user-plus">Affecter</i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

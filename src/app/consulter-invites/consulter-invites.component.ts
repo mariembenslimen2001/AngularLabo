@@ -1,37 +1,42 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, CdkDrag, CdkDropList} from '@angular/cdk/drag-drop';
-import { Member } from 'src/models/member';
-import { MemberService } from 'src/services/member.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatChipsModule } from '@angular/material/chips';
+import { MemberService } from 'src/services/member.service';
 
 @Component({
   selector: 'app-consulter-invites',
   templateUrl: './consulter-invites.component.html',
-  styleUrls: ['./consulter-invites.component.css'],
+  styleUrls: ['./consulter-invites.component.css']
 })
-export class ConsulterInvitesComponent implements OnInit{
+export class ConsulterInvitesComponent implements OnInit {
+  members: any[] = [];
 
-  members : Member[];
+  constructor(
+    private MS: MemberService,
+    private dialogRef: MatDialogRef<ConsulterInvitesComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { eventId: number }
+  ) {}
 
-  constructor(private MS: MemberService, @Inject(MAT_DIALOG_DATA) public data: { eventId: number },
-  private dialogRef: MatDialogRef<ConsulterInvitesComponent>, ){
-
-  }
   ngOnInit(): void {
-    this.MS.getMembersByEvent(this.data.eventId).subscribe(
-      (members) => {
-        this.members = members;
+    this.MS.getMembersByEvent(this.data.eventId).subscribe(members => {
+      this.members = this.removeDuplicates(members);
+    });
+  }
+
+  removeDuplicates(members: any[]): any[] {
+    const uniqueMembers = [];
+    const memberIds = new Set();
+
+    for (const member of members) {
+      if (!memberIds.has(member.id)) {
+        uniqueMembers.push(member);
+        memberIds.add(member.id);
       }
-    )
+    }
+
+    return uniqueMembers;
   }
 
-  drop(event: CdkDragDrop<Member[]>) {
-    moveItemInArray(this.members, event.previousIndex, event.currentIndex);
-  }
-
-
-  close(){
+  close(): void {
     this.dialogRef.close();
   }
 }
