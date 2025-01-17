@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <h1 class="text-center">Nouveau Enseignant</h1>
+  <form [formGroup]="form" (ngSubmit)="OnSubmit()" class="mt-4">
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="cin">CIN</label>
+        <input type="text" class="form-control" id="cin" name="cin" formControlName="cin" placeholder="Numéro CIN" [value]="form.get('cin')?.value">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" id="nom" name="nom" formControlName="nom" placeholder="Nom" [value]="form.get('nom')?.value">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="prenom">Prénom</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" formControlName="prenom" placeholder="Prénom" [value]="form.get('prenom')?.value">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="dateNaissance">Date de naissance</label>
+        <input type="date" class="form-control" id="dateNaissance" formControlName="dateNaissance" [value]="form.get('dateNaissance')?.value | date:'yyyy-MM-dd'">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="dateRecrutement">Date de recrutement</label>
+        <input type="date" class="form-control" id="dateRecrutement" formControlName="dateRecrutement" [value]="form.get('dateRecrutement')?.value | date:'yyyy-MM-dd'">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="cv">CV</label>
+        <input type="text" class="form-control" id="cv" name="cv" formControlName="cv" placeholder="lien vers le cv" [value]="form.get('cv')?.value">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="grade">Grade</label>
+        <input type="text" class="form-control" id="grade" name="grade" formControlName="grade" [value]="form.get('grade')?.value">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="etablissement">Etablissement</label>
+        <input type="text" class="form-control" id="etablissement" name="etablissement" formControlName="etablissement" [value]="form.get('etablissement')?.value">
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> Submit
+      </button>
+    </div>
+
+  </form>
+</div>

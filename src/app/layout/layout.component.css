@@ -1,0 +1,5 @@
+.bg-nav{
+  height: 10vh; width: 100vw; 
+  background-image: linear-gradient(112.51deg, #c1d3ff 0%, #dcf5f7 49%, #fcd9e9 100%);
+    pointer-events: initial;
+}

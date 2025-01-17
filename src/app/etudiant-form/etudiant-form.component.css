@@ -1,0 +1,87 @@
+:host {
+  margin-top: -2.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90.5vh;
+  background:  #a8bbff;
+}
+
+
+.example-form-container {
+  width: 800px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Adjust if needed */
+}
+
+
+.text-align-center{
+  text-align: center;
+}
+.example-form {
+  width: 80%;
+  /* Adjust the width of the form container */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  /* Adjust the gap between form fields */
+  margin-bottom: 15px;
+
+  /* Adjust the margin between form rows */
+
+}
+    .submit-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    /* Adjust the margin at the top of the submit button */
+  }
+
+  .custom-form-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.custom-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.custom-form-field {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.custom-form-field:last-child {
+    margin-right: 0;
+}
+
+.custom-button-container {
+    margin-top: 20px;
+}
+
+.custom-submit-button {
+    background-color: #007bff;
+    color: #fff;
+}

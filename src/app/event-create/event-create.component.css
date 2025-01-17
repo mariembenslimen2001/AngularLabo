@@ -1,0 +1,32 @@
+:host {
+  margin-top: -2.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90.5vh;
+  
+}
+
+.form-container {
+  width: 600px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+mat-form-field {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  margin-top: 20px;
+  background: #2196F3;
+  color: #fff;
+}

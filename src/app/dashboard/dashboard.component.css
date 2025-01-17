@@ -1,0 +1,167 @@
+.margin-top{
+  margin-top: 50px;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Optionally set a height to center vertically */
+}
+.chart-width{
+  display: block;
+  justify-content: center;
+
+  width: 55%;
+}
+
+.card-props {
+  width: 50%;
+  border-radius: 10px;
+  background-color: rgb(238, 246, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values for your desired shadow effect */
+}
+
+.chart-details{
+  display: flex;
+  align-items: center;
+  height: 300px;
+  border-radius: 10px;
+  background-image: linear-gradient(292.51deg, #c1d3ff 0%, #dcf5f7 49%, #fcd9e9 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-left: -5.5%;
+  margin-right: -5.5%;
+}
+
+.chart-details2{
+  display: flex;
+  align-items: center;
+  height: 300px;
+  border-radius: 10px;
+  background-image: linear-gradient(112.51deg, #c1d3ff 0%, #dcf5f7 49%, #fcd9e9 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 2%;
+}
+
+
+.members-card,
+.articles-card,
+.tools-card,
+.events-card {
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 300px;
+  height: 150px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.members-card::before,
+.articles-card::before,
+.tools-card::before,
+.events-card::before,
+.members-card::after,
+.articles-card::after,
+.tools-card::after,
+.events-card::after {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-color: rgba(255, 255, 255, 0.201); /* Slightly more opaque */
+  border-radius: 50%;
+  transform: scale(1);
+  /* animation: pulse 2s infinite; */
+}
+
+
+
+.members-card::before,
+.articles-card::before,
+.tools-card::before,
+.events-card::before {
+  bottom: 30px;
+  right: -70px;
+}
+
+.members-card::after,
+.articles-card::after,
+.tools-card::after,
+.events-card::after {
+  width: 170px;
+  height: 170px;
+  left: 145px;
+  top: 70px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.articles-card {
+  background: linear-gradient(to right, #86cdf9b9, #64aaff);
+}
+
+.members-card {
+  background: linear-gradient(to right,rgba(185, 108, 253, 0.789), #4b00e0bb );
+}
+
+.tools-card {
+  background: linear-gradient(to right, #6ee88fbd, #3bb873);
+}
+
+.events-card {
+  background: linear-gradient(to right, #ff8b8bb5, #ff5e5e);
+}
+
+.send-right{
+  margin-right: 147px;
+}
+
+h1{
+  font-size: 50px;
+  font-family: monospace;
+  font-weight: lighter;
+}
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.placement-of-header{
+  margin: 1%;
+  margin-left: 6%;
+  width: 88%;
+}
+.transparent-bg{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+
+.bar-dimensions{
+  display: flex;
+  justify-content: center;
+  width: 44%;
+  margin-left: -7%;
+  margin-right: -7%;
+}
+
+.line-dimensions{
+  width: 25%;
+  margin-left: -7%;
+  margin-right: -7%;
+}

@@ -1,0 +1,41 @@
+.login-container {
+  background-color: #f0f0f0;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.custom-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lab-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.welcome-text p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.google-button {
+  background-color: #4285f4;
+  color: #fff;
+  width: 100%;
+  max-width: 200px;
+}

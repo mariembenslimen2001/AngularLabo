@@ -1,0 +1,60 @@
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col">
+      <h2 class="text-primary">Liste des Articles</h2>
+    </div>
+    <div class="col text-end">
+      <button class="btn btn-primary" (click)="openArticleCreate()">
+        <i class="fas fa-plus"></i> Nouvel Article
+      </button>
+    </div>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="row mb-3">
+      <div class="col">
+        <h2 class="text-center">Articles</h2>
+      </div>
+      
+    </div>
+    
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Titre</th>
+              <th>Date</th>
+              <th>Lien</th>
+              <th>Source PDF</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let article of obs | async">
+              <td>{{article.id}}</td>
+              <td>{{article.titre}}</td>
+              <td>{{article.date | date}}</td>
+              <td>{{article.lien}}</td>
+              <td>{{article.sourcepdf}}</td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-sm btn-outline-primary me-2" (click)="editArticle(article.id)">
+                    <i class="fas fa-edit">Modifier</i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger me-2" (click)="delete(article.id)">
+                    <i class="fas fa-trash">Supprimer</i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary" (click)="affecter(article.id)">
+                    <i class="fas fa-user-plus">Affecter</i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

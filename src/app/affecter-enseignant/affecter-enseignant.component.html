@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Tools Form</h2>
+
+<mat-dialog-content [formGroup]="form" fxLayout="column" fxLayoutAlign="space-evenly center">
+  <mat-form-field>
+    <mat-label>Encadrant</mat-label>
+    <mat-select formControlName="encadrant">
+        <mat-option *ngFor="let enseignant of enseignants" [value]="enseignant">{{enseignant.prenom}} {{enseignant.nom}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="space-evenly center" >
+  <button mat-raised-button color="primary" (click)="close()"> Quitter</button>
+  <button mat-raised-button color="warn" (click)="save()"> Soumettre</button>
+</mat-dialog-actions>
